@@ -1,83 +1,129 @@
-# Cyber Stackelberg Learning Game — Minimal Prototype
+# 🛡️ Cyber Stackelberg Learning Game
 
-A small two-player learning prototype built with Python and Streamlit.
+A simple **cybersecurity research game** built with **Python + Streamlit** to study Defender–Attacker decision-making, budget usage, and attack-path progression.
 
-## 1. Install Python
+## 🎯 Game Objective
 
-Install Python 3.11 or newer from the official Python website.
-During Windows installation, select **Add Python to PATH**.
+* 🛡️ **Defender:** Stop the attacker from reaching the Critical System.
+* ⚔️ **Attacker:** Move through the network and compromise the Critical System.
 
-Check the installation:
+## 🌐 Network
 
-```bash
-python --version
+```text
+Entry
+  ↓
+Workstation
+ ↙       ↘
+Server   Database
+ ↘       ↙
+Critical System
 ```
 
-On some systems use:
+## 🛡️ Defender Actions
 
-```bash
-python3 --version
-```
+* 🟠 **Protect** — reduce attack success
+* ⛔ **Block** — strongly restrict attacks
+* 🔍 **Detect** — detect attacker activity
 
-## 2. Open the project folder
+## ⚔️ Attacker Actions
 
-```bash
-cd cyber_stackelberg_minimal
-```
+* 🔎 **Scan** — improve future attack success
+* 💥 **Attack** — compromise a connected node
+* 🕳️ **Bypass** — expensive but less affected by defence
 
-## 3. Create a virtual environment
+## 💰 Budget System
 
-### Windows PowerShell
+Both players have limited money.
+
+Resources can be spent on:
+
+* actions
+* defence tools
+* attacker tools
+* protecting important systems
+* improving attack chances
+
+## 🗺️ Visual Status
+
+* 🟢 Safe
+* 🟠 Protected
+* ⚫ Blocked
+* 🔴 Compromised
+* 🔵 Detection Sensor
+* 🟣 `A` = Attacker Position
+
+## 📊 Research Dashboard
+
+The application displays:
+
+* current round
+* attacker location
+* Defender and Attacker budgets
+* utility values
+* estimated win probability
+* compromised nodes
+* detection events
+* experiment history
+* CSV export
+
+## 🚀 Run the Project
+
+Create and activate the virtual environment:
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-### Windows Command Prompt
+Install dependencies:
 
-```cmd
-python3 -m venv .venv
-.venv\Scripts\activate.bat
+```powershell
+python -m pip install -r requirements.txt
 ```
 
-### macOS or Linux
+Run the application:
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
+```powershell
+python -m streamlit run app.py
 ```
 
-## 4. Install dependencies
+Open:
 
-```bash
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+```text
+http://localhost:8501
 ```
 
-## 5. Start the game
+## 🧠 Game-Theory Idea
 
-```bash
-streamlit run app.py
+The game follows a simplified **Stackelberg leader–follower model**:
+
+```text
+Defender acts first
+        ↓
+Attacker observes
+        ↓
+Attacker responds
+        ↓
+Game state updates
 ```
 
-The browser should open automatically. Otherwise open the local address shown in the terminal, normally `http://localhost:8501`.
+🛡️ **Defender = Leader**
+⚔️ **Attacker = Follower**
 
-## Current prototype features
+## 🔬 Research Purpose
 
-- Two-player local turn flow
-- Defender moves first
-- Attacker responds
-- Five-node network map
-- Protected, safe and compromised states
-- Three rounds
-- Basic winner screen
-- Event log
+The project explores how **limited cybersecurity budgets and strategic resource allocation** can influence attack and defence outcomes.
 
-## Next development steps
+> ⚠️ The displayed win probability is currently a heuristic estimate and not a formal Strong Stackelberg Equilibrium calculation.
 
-1. Validate whether an attack target is connected to a compromised node.
-2. Add Block, Detect, Scan and Bypass actions.
-3. Move game rules into a separate backend module.
-4. Add scoring and learning feedback.
-5. Improve the interface and add a start screen.
+## 🛠️ Technologies
+
+* 🐍 Python
+* 🎈 Streamlit
+* 🌐 NetworkX
+* 📈 Matplotlib
+* 📊 Pandas
+
+## 📌 Project Status
+
+**Research Prototype / Learning Project**
