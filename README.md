@@ -1,6 +1,6 @@
 # 🛡️ Cyber Stackelberg Learning Game
 
-A simple **cybersecurity research game** built with **Python + Streamlit** to study Defender–Attacker decision-making, budget usage, and attack-path progression.
+A **cybersecurity research game** built with **Python + Streamlit** to study Defender–Attacker decision-making, budget usage, and attack-path progression.
 
 ## 🎯 Game Objective
 
